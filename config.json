@@ -3,5 +3,5 @@
     "everyoneMention": false,
     "hostedBy": true,
     "default_prefix": ";",
-    "mongoose": "Your mongoose code"
+    "mongoose": "mongodb+srv://tapbotdb:V1SkOucVCT6TPgNe@cluster0.jzmj9.mongodb.net/test"
 }
