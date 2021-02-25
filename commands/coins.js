@@ -1,5 +1,4 @@
 const db = require('quick.db');
-const ms = require('parse-ms');
 
 module.exports = {
     name: "coins",
@@ -9,8 +8,10 @@ module.exports = {
 
       
         let amount = await db.fetch(`money_${message.guild.id}_${message.author.id}`)
-        if(amount >= 1) return message.channel.send("you have no coins")
+        if(amount == null) {
+          return message.channel.send("you have no coins")
+        }else{
         message.channel.send(`You Have ${amount} coins`)
-      
+        }
     }
 }
