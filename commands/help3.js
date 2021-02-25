@@ -1,5 +1,5 @@
 module.exports = {
-    name: "help",
+    name: "h",
     description: "tag the staff for help",
 
     async run (client, message, args) {

@@ -6,8 +6,8 @@ module.exports = {
 
     async run (client, message, args) {
 
-      
-        let amount = await db.fetch(`money_${message.guild.id}_${message.author.id}`)
+        let user = message.mentions.users.first() || message.author;
+        let amount = await db.fetch(`money_${message.guild.id}_${user.id}`)
         if(amount == null) {
           return message.channel.send("you have no coins")
         }else{
