@@ -1,6 +1,6 @@
 module.exports = {
-    name: "h",
-    description: "tag the staff for help",
+    name: "17+",
+    description: "test for role 17+",
 
     async run (client, message, args) {
 
