@@ -2,6 +2,6 @@
     "token": "ODE0NTkwMDM0Mjk5NTg0NTUy.YDgEFg.wIDTpfg6-T-EidAXBsqFMl7QxKI",
     "everyoneMention": false,
     "hostedBy": true,
-    "default_prefix": "!",
+    "default_prefix": "?",
     "mongoose": "mongodb+srv://tapbotdb:V1SkOucVCT6TPgNe@cluster0.jzmj9.mongodb.net/test"
 }
