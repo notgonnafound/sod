@@ -8,7 +8,8 @@ module.exports = {
 
        let staffrole = message.guild.roles.cache.find(role => role.name === "Staff");
        let hstaffrole = message.guild.roles.cache.find(role => role.name === "High Staff");
-       let m
+       const talkedRecently = new Set();
+      
        if(!message.member.voice.channel) {
          return message.channel.send(`${staffrole} | ${hstaffrole} | <@${message.author.id}> need your help \n no voice chat \n reason: `+"`"+`${reason || `no reson`}`+"`")
        }else{
