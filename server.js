@@ -17,16 +17,7 @@ const db = require('quick.db');
 
 const { GiveawaysManager } = require('discord-giveaways');
 
-client.giveawaysManager = new GiveawaysManager(client, {
-    storage: "./giveaways.json",
-    updateCountdownEvery: 5000,
-    default: {
-        botsCanWin: false,
-        exemptPermissions: [],
-        embedColor: "#FF0000",
-        reaction: "🎉"
-    }
-});
+
 
 client.commands = new Discord.Collection();
 //You can change the prefix if you like. It doesn't have to be ! or ;
