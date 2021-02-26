@@ -8,25 +8,27 @@ module.exports = {
     async run (client, message, args) {
 
       if (used.has(message.author.id)){
-      return message.channel.send("you have to wait 30 sec")  
+       message.channel.send("you have to wait 30 sec")  
       }else{
+      
         
                 const reason = args.join(" ");
 
-       let staffrole = message.guild.roles.cache.find(role => role.name === "Staff");
-       let hstaffrole = message.guild.roles.cache.find(role => role.name === "High Staff");
+       let tester17 = message.guild.roles.cache.find(role => role.id === "802256057031196672");
+       
        
        if(!message.member.voice.channel) {
-          message.channel.send(`${staffrole} | ${hstaffrole} | <@${message.author.id}> need your help \n no voice chat \n reason: `+"`"+`${reason || `no reson`}`+"`")
+          message.channel.send(`${tester17} |  <@${message.author.id}> want test for 17+ \n no voice chat`)
        }else{
-          message.channel.send(`${staffrole} | ${hstaffrole} | <@${message.author.id}> need your help \n voice channel: ${message.member.voice.channel} \n reason: `+"`"+`${reason || `no reson`}`+"`")
+          message.channel.send(`${tester17} |  <@${message.author.id}> want test for 17+ \n voice channel: ${message.member.voice.channel} `)
        }
 
+        
         
         used.add(message.author.id);
         setTimeout(() => {
           used.delete(message.author.id)
-        },5000)
+        },30000)
       }
 
     }
