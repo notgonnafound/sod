@@ -2,7 +2,7 @@ const db = require('quick.db');
 const Discord = require('discord.js');
 
 module.exports = {
-    name: "coins",
+    name: "coins" || "bal",
     description: "bleh",
 
     async run (client, message, args) {
