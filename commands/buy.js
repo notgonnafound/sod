@@ -14,7 +14,7 @@ module.exports = {
         let r2 = message.guild.roles.cache.find(x => x.id === "815428498264031263");
         const user = message.author;
         if(purchase === '1'){
-            if (db.has(`variable`,{ items: [] })){
+            if (db.has(message.author.id, { items: ["r3"] })){
                 return message.reply("Already got a that role bro!")
 
 } else {
@@ -26,14 +26,14 @@ module.exports = {
         }
     }
         if(purchase === '2'){
-            if (db.has(`variable`, { items: ["r2"] })){
+            if (db.has(message.author.id, { items: ["r2"] })){
                 return message.reply("Already got a that role bro!")
 
 } else {
-            if(amount < 500) return message.channel.send('You do not have enough money to buy this role. Please try another one');
-            user.roles.add(r2);
-            db.subtract(`money_${message.guild.id}_${message.author.id}`, 500);
-            db.push(message.author.id, "r2");
+            if(amount < 250) return message.channel.send('You do not have enough money to buy this role. Please try another one');
+            message.member.roles.add(r2);
+            db.subtract(`money_${message.guild.id}_${message.author.id}`, 250);
+            db.push(message.author.id, `${r2}`);
             message.channel.send(`Successfully bought the role ${r2}`)
         }
     }
