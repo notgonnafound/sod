@@ -7,13 +7,11 @@ module.exports = {
 
 
     async run (client, message, args) {
-      let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        if (!user) user = message.author
-        let items = await db.fetch(user.id);
-        if(items === null) items = "Nothing"
-
+        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+        db.delete(user.id);
+        
         const Embed = new Discord.MessageEmbed()
-        .addField('Inventory', items)
+        .addField('Inventory', `${user} invrntory has been cleared`);
 
         message.channel.send(Embed);
     }

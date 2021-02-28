@@ -83,16 +83,14 @@ client.on("message", async message => {
         const command = args.shift().toLowerCase();
 
         if (!client.commands.has(command)) return;
-  
-          const cmd = client.cimmands.get(command) || client.commands.find(a => a.aliases && a.aliases.includes(command))
-          if(cmd) cmd.execute(client, , message)
-          
-       /* try {
-            client.commands.get(command).run(client, message, args) || client.commands.find(a => a.aliases && a.aliases.includes(command)).run(client, message, args);
+
+
+        try {
+            client.commands.get(command).run(client, message, args);
 
         } catch (error) {
             console.error(error);
-        }*/
+        }
 })
 
 client.login(token);
