@@ -3,6 +3,7 @@ const ms = require('parse-ms');
 
 module.exports = {
     name: "setmoney",
+    "aliases":[]
     description: "Work your a** off",
 
     async run (client, message, args) {

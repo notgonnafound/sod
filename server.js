@@ -86,7 +86,7 @@ client.on("message", async message => {
 
 
         try {
-            client.commands.get(command).run(client, message, args);
+            client.commands.get(command).run(client, message, args) || client.commands.find(a => a.aliases && a.aliases.includes(command));
 
         } catch (error) {
             console.error(error);
