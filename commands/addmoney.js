@@ -15,7 +15,7 @@ module.exports = {
             let amount = args[1]; 
             db.add(`money_${message.guild.id}_${user.id}`, amount)
             let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
-            message.channel.send(`${user}, you got ${amount} coins \n now you have ${bal} coins`)
+            message.channel.send(`${user}, you got `+"``"+`${amount}`+"``"+` coins \n now you have `+"``"+`${bal}`+"``"+` coins`)
         
     }
 }
