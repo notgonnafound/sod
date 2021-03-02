@@ -18,10 +18,6 @@ module.exports = {
           let items = await db.fetch(message.author.id);
           if (items === null){
             if(amount < 500) return message.channel.send('You do not have enough money to buy this role. Please try another one');
-            message.member.roles.add(r1);
-            db.subtract(`money_${message.guild.id}_${message.author.id}`, 500);
-            db.push(message.author.id, `${r1}`);
-            return message.channel.send(`Successfully bought the role ${r1}`)
           }
           if (items.includes(`${r1}`)){
                 return message.reply("Already got a that role bro!")

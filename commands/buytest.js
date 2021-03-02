@@ -12,6 +12,26 @@ module.exports = {
       let items = await db.fetch(message.author.id, { items: [] });
       let amount = await db.fetch(`money_${message.guild.id}_${message.author.id}`)
       let item = await db.fetch(message.author.id);
-      if(items === null)
+      
+      let role1 = db.fetch(`r1_${message.guild.id}`)
+      let role1price = db.fetch(`r1_price_${message.guild.id}`)
+      let role2 = db.fetch(`r2_${message.guild.id}`)
+      let role2price = db.fetch(`r2_price_${message.guild.id}`)      
+      let role3 = db.fetch(`r3_${message.guild.id}`)
+      let role3price = db.fetch(`r3_price_${message.guild.id}`) 
+      let r1 = message.guild.roles.cache.find(x => x.id === role1);
+      let r2 = message.guild.roles.cache.find(x => x.id === role2);
+      let r3 = message.guild.roles.cache.find(x => x.id === role3);
+      
+     
+      
+      
+      if(purchase == "1"){
+        if(item === null){
+          if(amount < role1price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r1}`)) return message.chnnael.send("Already got a that role bro!")
+          
+        }
+      }
     }
 }
