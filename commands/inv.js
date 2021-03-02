@@ -9,7 +9,7 @@ module.exports = {
     async run (client, message, args) {
       let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         if (!user) user = message.author
-        let items = await db.fetch(user.id);
+        let items = await db.fetch(`inv_${message.guild.id}_${user.id}`);
         if(items === null) items = "Nothing"
 
         const Embed = new Discord.MessageEmbed()
