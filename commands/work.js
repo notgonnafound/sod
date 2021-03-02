@@ -6,6 +6,9 @@ module.exports = {
     description: "Work your a** off",
 
     async run (client, message, args) {
+      
+      if(message.author.id !== "743242472913895454") return
+      
         let user = message.author;
         let timeout = 600000;
         let author = await db.fetch(`worked_${message.guild.id}_${user.id}`);
