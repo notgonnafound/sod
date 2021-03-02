@@ -22,7 +22,7 @@ module.exports = {
         if(!r1) return message.channel.send("no shop on this server")
         let pro1 = `1 - ${r1} - ${role1price} coins`
         let pro2 = `2 - ${r2} - ${role2price} coins`
-        let pro3 = `2 - ${r3} - ${role3price} coins`
+        let pro3 = `3 - ${r3} - ${role3price} coins`
         if(!r2) pro2 = "2 - nothing"
         if(!r3) pro3 = "3 - nothing"
       
