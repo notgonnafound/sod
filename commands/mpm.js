@@ -1,18 +1,16 @@
 const Discord = require('discord.js');
-
+const db = require('quick.db');
 module.exports = {
-    name: "shop",
+    name: "mpm",
     description: "View the shop",
 
     async run (client, message, args) {
   
-      
-        let r1 = message.guild.roles.cache.find(x => x.id === "815428440433360899");
-        let r2 = message.guild.roles.cache.find(x => x.id === "815428498264031263");
+          db.set(`mpm_${message.guild.id}`, args[0])
 
         const embed = new Discord.MessageEmbed()
-        .setTitle('Store')
-        .setDescription(`1 - ${r1} - 500 coins \n2 - ${r2} - 250 coins`)
+        .setTitle('money per message')
+        .setDescription(`money per message change to ${args[0]}`)
         .setTimestamp();
 
         message.channel.send(embed);

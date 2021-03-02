@@ -64,6 +64,12 @@ client.on('guildMemberRemove', member => {
 
 client.on("message", async message => {
 
+  
+  let mpm = db.fetch(`mpm_${message.guild.id}`)
+  if(!mpm) mpm = "1";
+  
+  db.add(`money_${message.guild.id}_${message.author.id}`, mpm)
+  
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
 
