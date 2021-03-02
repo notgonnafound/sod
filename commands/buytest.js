@@ -46,142 +46,177 @@ module.exports = {
       
      
       
-      if(purchase >= "11") return message.channel.send("only beatween 1 - 10") 
+      
       if(purchase == "1"){
-        if (!role1) return message.channel.shend("sry but i dident found it")
+        if (!role1) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role1price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r1}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r1)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role1price)
           db.push(message.author.id, `${r1}`)
-          message.channel.send(`Successfully bought the role ${r1}`)
+          return message.channel.send(`Successfully bought the role ${r1}`)
         }
           if(amount < role1price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r1}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r1)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role1price)
           db.push(message.author.id, `${r1}`)
-          message.channel.send(`Successfully bought the role ${r1}`)
+          return message.channel.send(`Successfully bought the role ${r1}`)
       }
         if(purchase == "2"){
-        if (!role2) return message.channel.shend("sry but i dident found it")
+        if (!role2) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role2price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r2}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r2)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role2price)
           db.push(message.author.id, `${r2}`)
-          message.channel.send(`Successfully bought the role ${r2}`)
+          return message.channel.send(`Successfully bought the role ${r2}`)
         }
           if(amount < role2price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r2}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r2)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role2price)
           db.push(message.author.id, `${r2}`)
-          message.channel.send(`Successfully bought the role ${r2}`)
+          return message.channel.send(`Successfully bought the role ${r2}`)
       }
       if(purchase == "3"){
-        if (!role3) return message.channel.shend("sry but i dident found it")
+        if (!role3) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role3price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r3}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r3)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role3price)
           db.push(message.author.id, `${r3}`)
-          message.channel.send(`Successfully bought the role ${r3}`)
+          return message.channel.send(`Successfully bought the role ${r3}`)
         }
           if(amount < role3price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r3}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r3)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role3price)
           db.push(message.author.id, `${r3}`)
-          message.channel.send(`Successfully bought the role ${r3}`)
+          return message.channel.send(`Successfully bought the role ${r3}`)
       }
       if(purchase == "4"){
-        if (!role4) return message.channel.shend("sry but i dident found it")
+        if (!role4) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role4price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r4}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r4)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role4price)
           db.push(message.author.id, `${r4}`)
-          message.channel.send(`Successfully bought the role ${r4}`)
+          return message.channel.send(`Successfully bought the role ${r4}`)
         }
           if(amount < role4price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r4}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r4)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role4price)
           db.push(message.author.id, `${r4}`)
-          message.channel.send(`Successfully bought the role ${r4}`)
+          return message.channel.send(`Successfully bought the role ${r4}`)
       }
       if(purchase == "5"){
-        if (!role5) return message.channel.shend("sry but i dident found it")
+        if (!role5) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role5price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r5}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r5)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role5price)
           db.push(message.author.id, `${r5}`)
-          message.channel.send(`Successfully bought the role ${r5}`)
+          return message.channel.send(`Successfully bought the role ${r5}`)
         }
           if(amount < role5price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r5}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r5)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role5price)
           db.push(message.author.id, `${r5}`)
-          message.channel.send(`Successfully bought the role ${r5}`)
+          return message.channel.send(`Successfully bought the role ${r5}`)
       }
       if(purchase == "6"){
-        if (!role6) return message.channel.shend("sry but i dident found it")
+        if (!role6) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role6price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r6}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r6)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role6price)
           db.push(message.author.id, `${r6}`)
-          message.channel.send(`Successfully bought the role ${r6}`)
+          return message.channel.send(`Successfully bought the role ${r6}`)
         }
           if(amount < role6price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r6}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r6)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role6price)
           db.push(message.author.id, `${r6}`)
-          message.channel.send(`Successfully bought the role ${r6}`)
+          return message.channel.send(`Successfully bought the role ${r6}`)
       }
       if(purchase == "7"){
-        if (!role7) return message.channel.shend("sry but i dident found it")
+        if (!role7) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role7price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r7}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r7)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role7price)
           db.push(message.author.id, `${r7}`)
-          message.channel.send(`Successfully bought the role ${r7}`)
+          return message.channel.send(`Successfully bought the role ${r7}`)
         }
           if(amount < role7price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r7}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r7)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role7price)
           db.push(message.author.id, `${r7}`)
-          message.channel.send(`Successfully bought the role ${r7}`)
+          return message.channel.send(`Successfully bought the role ${r7}`)
       }
       if(purchase == "8"){
-        if (!role8) return message.channel.shend("sry but i dident found it")
+        if (!role8) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role8price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r8}`)) return message.channel.send("Already got a that role bro!")
           message.member.roles.add(r8)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role8price)
           db.push(message.author.id, `${r8}`)
-          message.channel.send(`Successfully bought the role ${r8}`)
+          return message.channel.send(`Successfully bought the role ${r8}`)
         }
           if(amount < role8price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r8}`)) return message.channel.send("Already got a that role bro!")
-          message.member.roles.add(r4)
-          db.subtract(`money_${message.guild.id}_${message.author.id}`, role4price)
-          db.push(message.author.id, `${r4}`)
-          message.channel.send(`Successfully bought the role ${r4}`)
+          message.member.roles.add(r8)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role8price)
+          db.push(message.author.id, `${r8}`)
+          return message.channel.send(`Successfully bought the role ${r8}`)
       }
+      if(purchase == "9"){
+        if (!role9) return message.channel.shend("you cant buy something that not exsissit")
+        if(item === null){
+          if(amount < role9price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r9}`)) return message.channel.send("Already got a that role bro!")
+          message.member.roles.add(r9)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role9price)
+          db.push(message.author.id, `${r9}`)
+          return message.channel.send(`Successfully bought the role ${r9}`)
+        }
+          if(amount < role9price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r9}`)) return message.channel.send("Already got a that role bro!")
+          message.member.roles.add(r9)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role9price)
+          db.push(message.author.id, `${r9}`)
+          return message.channel.send(`Successfully bought the role ${r9}`)
+      }
+      if(purchase == "10"){
+        if (!role10) return message.channel.shend("you cant buy something that not exsissit")
+        if(item === null){
+          if(amount < role10price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r10}`)) return message.channel.send("Already got a that role bro!")
+          message.member.roles.add(r10)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role10price)
+          db.push(message.author.id, `${r10}`)
+          return message.channel.send(`Successfully bought the role ${r10}`)
+        }
+          if(amount < role10price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r10}`)) return message.channel.send("Already got a that role bro!")
+          message.member.roles.add(r10)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role10price)
+          db.push(message.author.id, `${r10}`)
+          return message.channel.send(`Successfully bought the role ${r10}`)
+      }
+      if(purchase) return message.channel.send("only num beatween 1 - 10") 
     }
 }
