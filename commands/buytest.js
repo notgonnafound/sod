@@ -27,11 +27,33 @@ module.exports = {
       
       
       if(purchase == "1"){
+        if (!role1) return message.channel.shend("sry but i dident found it")
         if(item === null){
           if(amount < role1price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r1}`)) return message.chnnael.send("Already got a that role bro!")
-          
+          message.member.roles.add(r1)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role1price)
+          db.push(message.author.id, `${r1}`)
+          message.channel.send(`Successfully bought the role ${r1}`)
         }
+          if(amount < role1price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r1}`)) return message.chnnael.send("Already got a that role bro!")
+          message.member.roles.add(r1)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role1price)
+          db.push(message.author.id, `${r1}`)
+          message.channel.send(`Successfully bought the role ${r1}`)
+      }
+        if(purchase == "2"){
+        if (!role2) return message.channel.shend("sry but i dident found it")
+        if(item === null){
+          if(amount < role2price) return message.channel.send("not enogh money sry")
+        }
+          if(amount < role1price) return message.channel.send("not enogh money sry")
+          if (item.includes(`${r1}`)) return message.chnnael.send("Already got a that role bro!")
+          message.member.roles.add(r1)
+          db.subtract(`money_${message.guild.id}_${message.author.id}`, role1price)
+          db.push(message.author.id, `${r1}`)
+          message.channel.send(`Successfully bought the role ${r1}`)
       }
     }
 }
