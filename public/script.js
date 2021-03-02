@@ -2,7 +2,7 @@
 // run by the browser each time the page is loaded
 
 console.log("hello world :o");
-const db = require('quick.db');
+
 // define variables that reference elements on our page
 const dreamsList = document.getElementById("dreams");
 const dreamsForm = document.querySelector("form");
@@ -31,9 +31,6 @@ fetch("/dreams")
 
       // get dream value and add it to the list
       let newDream = dreamsForm.elements.dream.value;
-      let Discord = require('discord.js');
-      const client = new Discord.Client();
-      if(client.guild.cac)
       dreams.push(newDream);
       appendNewDream(newDream);
 
