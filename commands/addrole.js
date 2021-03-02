@@ -9,7 +9,7 @@ module.exports = {
     async run (client, message, args) {
       
 
-      if(args[0] > "10") return message.channel.send("only beateen 1 - 10");
+      
       if(args[0] == "1") {
         db.set(`r1_${message.guild.id}`, args[1])
         db.set(`r1_price_${message.guild.id}`, args[2])
@@ -70,6 +70,6 @@ module.exports = {
         let role = message.guild.roles.cache.find(x => x.id === args[1]);
         message.channel.send(`secsses the role ${role} has been set for ${args[2]} coins`)
       }
-      
+      if(args[0] >= "11") return message.channel.send("only beateen 1 - 10");
     }
 }
