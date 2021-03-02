@@ -24,7 +24,13 @@ module.exports = {
         db.set(`r2_price_${message.guild.id}`, args[2])
         let role = message.guild.roles.cache.find(x => x.id === args[1]);
         message.channel.send(`secsses the role ${role} has been set for ${args[2]} coins`)
-      }      
+      }     
+      if(args[0] == "3") {
+        db.set(`r3_${message.guild.id}`, args[1])
+        db.set(`r3_price_${message.guild.id}`, args[2])
+        let role = message.guild.roles.cache.find(x => x.id === args[1]);
+        message.channel.send(`secsses the role ${role} has been set for ${args[2]} coins`)
+      }    
       
     }
 }
