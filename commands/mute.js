@@ -13,9 +13,9 @@ module.exports = {
       let role = message.guild.roles.cache.find(x => x.id === "816267328869892137");
       let time = args[1];
       if(!time) return message.channel.send("how mutch time thr mute is gonna be?");
-      
+      let reason = args.slice(2).join(" ");
       await(tomute.roles.add(role));
-      message.channel.send(`${tomute} has been muted for ${ms(ms(time))}`);
+      message.channel.send(`${tomute} has been muted for ${ms(ms(time))} for the reason \n ${reason}`);
       
       setTimeout(function(){
         tomute.roles.remove(role)
