@@ -15,8 +15,6 @@ const db = require('quick.db');
 
 
 
-const { GiveawaysManager } = require('discord-giveaways');
-
 
 
 client.commands = new Discord.Collection();
