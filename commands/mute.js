@@ -1,9 +1,9 @@
 const db = require('quick.db');
 const Discord = require('discord.js');
-const ms = requi
+const ms = require('ms');
 module.exports = {
-    name: "inv",
-    description: "View your inventory",
+    name: "mute",
+    description: "mute member",
 
 
     async run (client, message, args) {
@@ -14,6 +14,13 @@ module.exports = {
       let time = args[1];
       if(!time) return message.channel.send("how mutch time thr mute is gonna be?");
       
+      await(tomute.roles.add(role));
+      message.channel.send(`${tomute} has been muted for ${ms(ms(time))}`);
+      
+      setTimeout(function(){
+        tomute.roles.remove(role)
+        message.channel.send(`${tomute} has been unmuted`)
+      }, ms(time))
       
     }
 }
