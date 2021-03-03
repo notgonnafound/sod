@@ -19,11 +19,14 @@ module.exports = {
       await(presonmem.roles.add(role));
       presonmem.roles.remove(memrole)
       
-      const embed = new Discord.MessagsEmbed()
+      const embed = new Discord.MessageEmbed()
       .setTitle("new presoner")
-      .addField("")
-      
-      logs.send(`${presonmem} has been presoned for ${ms(ms(time))} for the reason \n ${reason}`);
+      .addField("the new prisoner is:", presonmem)
+      .addField("got preson for rhe reason:", reason)
+      .addField(`got preson for:`, ms(ms(time)))
+      .addField(`the man who take him to jail:`, message.author)
+      logs.send(embed)
+      // logs.send(`${presonmem} has been presoned for ${ms(ms(time))} for the reason \n ${reason}`);
       
       setTimeout(function(){
         presonmem.roles.remove(role)
