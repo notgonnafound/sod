@@ -8,11 +8,13 @@ module.exports = {
 
     async run (client, message, args) {
 
-      let presonmem = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if (message.member.roles.cache.find(r => r.id === "814599275446927408")){
+        let presonmem = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+      if (presonmem === message.author) return message.channel.send("you cant jail your self")
       let logs = message.guild.channels.cache.find(x => x.id === "816788429656293446")
       if(!presonmem) return message.channel.send("pls mention a user pls");
-      let role = message.guild.roles.cache.find(x => x.id === "816267328869892137");
-      let memrole = message.guild.roles.cache.find(x => x.id === "815861530435911691");
+      let role = message.guild.roles.cache.find(x => x.id === "802194119757004820");
+      let memrole = message.guild.roles.cache.find(x => x.id === "801774226700894209");
       let time = args[1];
       if(!time) return message.channel.send("how mutch time thr preson is gonna be?");
       let reason = args.slice(2).join(" ");
@@ -26,13 +28,13 @@ module.exports = {
       .addField(`got preson for:`, ms(ms(time)))
       .addField(`the man who take him to jail:`, message.author)
       logs.send(embed)
-      // logs.send(`${presonmem} has been presoned for ${ms(ms(time))} for the reason \n ${reason}`);
+      
       
       setTimeout(function(){
         presonmem.roles.remove(role)
         presonmem.roles.add(role)
-        message.channel.send(`${presonmem} has been unpresoned`)
       }, ms(time))
       
+  }else return message.channel.send("no perm :(")
     }
 }
