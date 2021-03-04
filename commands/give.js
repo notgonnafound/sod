@@ -23,8 +23,12 @@ module.exports = {
   
       
       message.channel.send("are you sure you wanna do it? answer only with yes or no")
-      message.channel.awaitMessages(m => )
-      
+      message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 1000, error:["err!"]})
+      .then(collected =>{  
+        if(collected.first().content.toLowerCase() === "yes") return message.channel.send("good")
+        if(collected.first().content.toLowerCase() === "no") return message.channel.send("oof")
+        else return message.channel.send("invalid response")
+      }).catch(() => {return message.channel.send("no time try again")})
             
             db.add(`money_${message.guild.id}_${user.id}`, amountto)
             db.subtract(`money_${message.guild.id}_${message.author.id}`, amountto)
