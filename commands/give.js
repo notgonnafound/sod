@@ -11,16 +11,25 @@ module.exports = {
       let prefix = await db.get(`prefix_${message.guild.id}`);
     if (prefix === null) prefix = default_prefix;  
       if(isNaN(args[1])){
-          return message.channel.send(`pls use ${default_prefix}give amount`)
-        }else return message.channel.send("good")
+          return message.channel.send(`pls use ${prefix}give <amount>`)
+        }
         
-      if (db.fetch(`money_${message.guild.id}_${message.author.id}`) > args[1]) return message.channel.send("not enogh money sry")
+      
+      let amountfrom = db.fetch(`money_${message.guild.id}_${message.author.id}`);
+      let amountto = args[1];
+      
+      if (amountto > amountfrom) return message.channel.send("not enogh money sry")
 
   
-            let amount = args[1]; 
-            db.add(`money_${message.guild.id}_${user.id}`, amount)
+      
+      message.channel.send("are you sure you wanna do it? answer only with yes or no")
+      message.channel.awaitMessages(m => )
+      
+            
+            db.add(`money_${message.guild.id}_${user.id}`, amountto)
+            db.subtract(`money_${message.guild.id}_${message.author.id}`, amountto)
             let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
-            message.channel.send(`${user}, you got `+"``"+`${amount}`+"``"+` coins \n now you have `+"``"+`${bal}`+"``"+` coins`)
+            message.channel.send(`${user}, got `+"``"+`${amountto}`+"``"+` coins \n now s/he have `+"``"+`${bal}`+"``"+` coins`)
         
     }
 }
