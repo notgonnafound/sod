@@ -1,6 +1,6 @@
 const db = require('quick.db');
 const ms = require('parse-ms');
-
+const { default_prefix } = require('../config.json')
 module.exports = {
     name: "give",
     description: "Work your a** off",
@@ -8,7 +8,12 @@ module.exports = {
     async run (client, message, args) {
         
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        if(isNaN)
+      let prefix = await db.get(`prefix_${message.guild.id}`);
+    if (prefix === null) prefix = default_prefix;  
+      if(isNaN(args[1])){
+          return message.channel.send(`pls use ${default_prefix}give amount`)
+        }else return message.channel.send("good")
+        
       if (db.fetch(`money_${message.guild.id}_${message.author.id}`) > args[1]) return message.channel.send("not enogh money sry")
 
   
