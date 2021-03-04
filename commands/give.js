@@ -8,7 +8,7 @@ module.exports = {
     async run (client, message, args) {
         
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        if(user.id ) return message.channel.send("resr")
+        if(isNaN)
       if (db.fetch(`money_${message.guild.id}_${message.author.id}`) > args[1]) return message.channel.send("not enogh money sry")
 
   
