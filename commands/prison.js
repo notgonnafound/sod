@@ -8,8 +8,8 @@ module.exports = {
 
     async run (client, message, args) {
   let staffrole = message.guild.roles.cache.find(x => x.id === "814599275446927408")
-  message.channel.send(`${}`)
-  if (message.member.roles.cache.has(staffrole)){
+  
+  if (message.member.roles.cache.some(staffrole)){
         let presonmem = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
       if (presonmem === message.author) return message.channel.send("you cant jail your self")
       let logs = message.guild.channels.cache.find(x => x.id === "816788429656293446")
