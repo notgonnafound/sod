@@ -8,14 +8,14 @@ module.exports = {
 
     async run (client, message, args) {
   let staffrole = message.guild.roles.cache.find(x => x.id === "814599275446927408")
-  let mem = message.guild.member(message.author)
-  if (mem.roles.cache.has(staffrole)){
+  message.channel.send(`${}`)
+  if (message.member.roles.cache.has(staffrole)){
         let presonmem = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
       if (presonmem === message.author) return message.channel.send("you cant jail your self")
       let logs = message.guild.channels.cache.find(x => x.id === "816788429656293446")
       if(!presonmem) return message.channel.send("pls mention a user pls");
-      let role = message.guild.roles.cache.find(x => x.id === "802194119757004820");
-      let memrole = message.guild.roles.cache.find(x => x.id === "801774226700894209");
+      let role = message.guild.roles.cache.find(x => x.id === "816267328869892137");
+      let memrole = message.guild.roles.cache.find(x => x.id === "815861530435911691");
       let time = args[1];
       if(!time) return message.channel.send("how mutch time thr preson is gonna be?");
       let reason = args.slice(2).join(" ");
