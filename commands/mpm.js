@@ -6,6 +6,12 @@ module.exports = {
 
     async run (client, message, args) {
   
+      
+      
+      if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permission to do that for administrator only');
+      
+      
+      
           db.set(`mpm_${message.guild.id}`, args[0])
 
         const embed = new Discord.MessageEmbed()

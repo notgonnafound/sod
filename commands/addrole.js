@@ -9,6 +9,8 @@ module.exports = {
     async run (client, message, args) {
       
 
+      if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permission to do that for administrator only');
+      
       
       if(args[0] == "1") {
         db.set(`r1_${message.guild.id}`, args[1])

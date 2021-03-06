@@ -23,7 +23,7 @@ module.exports = {
       }
       
 
-      if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permission to do that for administrator only');
+      if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send('you dont have permission to do that for ppl with mute members permission only');
       
       let muterole = db.fetch(`muterole_${message.guild.id}`)
       if (!muterole) return message.channel.send(`pls give me the id of the muted role by \n${prefix}mute roleset [role-id]`)
@@ -36,7 +36,7 @@ module.exports = {
       if(!time) return message.channel.send("how mutch time thr mute is gonna be?");
       let reason = args.slice(2).join(" ");
       await(tomute.roles.add(role));
-      message.channel.send(`${tomute} has been muted for ${ms(ms(time))} for the reason \n ${reason}`);
+      message.channel.send(`${tomute} has been muted for ${ms(ms(time))} for the reason \n${reason}`);
       
       setTimeout(function(){
         tomute.roles.remove(role)
