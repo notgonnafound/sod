@@ -67,14 +67,14 @@ module.exports = {
         if (!role2) return message.channel.shend("you cant buy something that not exsissit")
         if(item === null){
           if(amount < role2price) return message.channel.send("not enogh money sry")
-          message.member.roles.add(r2)
+          message.member.roles.add(r2.id)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role2price)
           db.push(`inv_${message.guild.id}_${message.author.id}`, `${r2}`)
           return message.channel.send(`Successfully bought the role ${r2}`)
         }
           if(amount < role2price) return message.channel.send("not enogh money sry")
           if (item.includes(`${r2}`)) return message.channel.send("Already got a that role bro!")
-          message.member.roles.add(r2)
+          message.member.roles.add(r2.id)
           db.subtract(`money_${message.guild.id}_${message.author.id}`, role2price)
           db.push(`inv_${message.guild.id}_${message.author.id}`, `${r2}`)
           return message.channel.send(`Successfully bought the role ${r2}`)

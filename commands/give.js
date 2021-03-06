@@ -29,22 +29,18 @@ module.exports = {
             db.add(`money_${message.guild.id}_${user.id}`, amountto)
             db.subtract(`money_${message.guild.id}_${message.author.id}`, amountto)
             let bal = db.fetch(`money_${message.guild.id}_${user.id}`);
-            message.channel.send(`${user}, got `+"``"+`${amountto}`+"``"+` coins \n now s/he have `+"``"+`${bal}`+"``"+` coins`)
+            return message.channel.send(`${user}, got `+"``"+`${amountto}`+"``"+` coins \n now s/he have `+"``"+`${bal}`+"``"+` coins`)
         }
         if(collected.first().content.toLowerCase() === "no") {
-          message.channel.send("oof")
+          return message.channel.send("oof")
         }
-        else if (collected.first().content.toLowerCase() !== "no" || "yes"){
+        else {
           message.channel.send("invalid respone")
         }
         
         
       }).catch(() => {return message.channel.send("no time try again")})
             
-            db.add(`money_${message.guild.id}_${user.id}`, amountto)
-            db.subtract(`money_${message.guild.id}_${message.author.id}`, amountto)
-            let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
-            message.channel.send(`${user}, got `+"``"+`${amountto}`+"``"+` coins \n now s/he have `+"``"+`${bal}`+"``"+` coins`)
         
     }
 }

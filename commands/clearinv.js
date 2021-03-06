@@ -10,7 +10,7 @@ module.exports = {
     async run (client, message, args) {
       if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permission to do that for administrator only');
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        db.delete(`inv_${message.guild.id}_${message.author.id}`);
+        db.delete(`inv_${message.guild.id}_${user.id}`);
         
         const Embed = new Discord.MessageEmbed()
         .addField('Inventory', `${user} invrntory has been cleared`);
