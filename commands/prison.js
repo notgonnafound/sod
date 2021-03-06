@@ -7,6 +7,7 @@ module.exports = {
 
 
     async run (client, message, args) {
+      if(message.guild.id !== "814589876610793502") return;
   let staffrole = message.guild.roles.cache.find(x => x.id === "814599275446927408")
   
   if (message.member.roles.cache.has(staffrole.id)){
