@@ -31,8 +31,14 @@ module.exports = {
             let bal = db.fetch(`money_${message.guild.id}_${user.id}`);
             message.channel.send(`${user}, got `+"``"+`${amountto}`+"``"+` coins \n now s/he have `+"``"+`${bal}`+"``"+` coins`)
         }
-        if(collected.first().content.toLowerCase() === "no") return message.channel.send("oof")
-        else return message.channel.send("invalid response")
+        if(collected.first().content.toLowerCase() === "no") {
+          message.channel.send("oof")
+        }
+        else if (collected.first().content.toLowerCase() !== "no" || "yes"){
+          message.channel.send("invalid respone")
+        }
+        
+        
       }).catch(() => {return message.channel.send("no time try again")})
             
             db.add(`money_${message.guild.id}_${user.id}`, amountto)
