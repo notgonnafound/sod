@@ -11,17 +11,22 @@ module.exports = {
     let prefix = await db.get(`prefix_${message.guild.id}`);
     if (prefix === null) prefix = default_prefix;
       
-      let muterole = db.fetch(`muterole_${message.guild.id}`)
-      if (!muterole) return message.channel.send(`pls give me the id of the muted role by \n${prefix}mute roleset [role-id]`)
+
       
-      if (args[0].toLowercase === "rpleset"){
+      if (args[0].toLowerCase() === "roleset"){
          if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permission to do that for administrator only');
          if(!args[1]) return message.channel.send(`pls give me the role id by using ${prefix}mute roleset [role-id]`)
          if(!message.guild.roles.cache.find(x => x.id === args[1])) return message.channel.send("i dident find that role pls try again")
         db.set(`muterole_${message.guild.id}`, args[1])
-        return message.channel.send("")
+        return message.channel.send(`thx the new role is [` + message.guild.roles.cache.find(x => x.id === db.fetch(`muterole_${message.guild.id}`)).name + `]`)
          
       }
+      
+
+      if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permission to do that for administrator only');
+      
+      let muterole = db.fetch(`muterole_${message.guild.id}`)
+      if (!muterole) return message.channel.send(`pls give me the id of the muted role by \n${prefix}mute roleset [role-id]`)
       
       
       let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
